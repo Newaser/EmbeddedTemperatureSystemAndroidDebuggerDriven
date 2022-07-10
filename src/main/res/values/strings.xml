@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">sample</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="show_gui">Show GUI</string>
+    <string name="str_hint_device_name">Please input device name</string>
+    <string name="str_ble_disconnect">No device connected</string>
+    <string name="str_device_connection">Device Connection</string>
+</resources>

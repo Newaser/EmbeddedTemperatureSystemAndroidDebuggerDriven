@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">sample</string>
+    <string name="connect">连接蓝牙</string>
+    <string name="disconnect">断开蓝牙</string>
+    <string name="show_gui">图形化界面</string>
+    <string name="str_hint_device_name">请输入设备名称</string>
+    <string name="str_ble_disconnect">蓝牙未连接</string>
+    <string name="str_device_connection">设备连接</string>
+</resources>

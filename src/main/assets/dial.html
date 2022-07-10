@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <title>Temperature</title>
+</head>
+<body style="height: 100%; margin: 10">
+<div id="container" style="height: 100%"></div>
+
+
+<script type="text/javascript"
+        src="echarts.min.js"></script>
+
+
+<script type="text/javascript">
+  var dom = document.getElementById('container');
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
+  var app = {};
+
+  var option;
+
+  option = {
+    series: [
+      {
+        type: 'gauge',
+        center: ['50%', '60%'],
+        startAngle: 200,
+        endAngle: -20,
+        min: 0,
+        max: 60,
+        splitNumber: 12,
+        itemStyle: {
+          color: '#FFAB91'
+        },
+        progress: {
+          show: true,
+          width: 30
+        },
+        pointer: {
+          show: false
+        },
+        axisLine: {
+          lineStyle: {
+            width: 30
+          }
+        },
+        axisTick: {
+          distance: -45,
+          splitNumber: 5,
+          lineStyle: {
+            width: 2,
+            color: '#999'
+          }
+        },
+        splitLine: {
+          distance: -52,
+          length: 14,
+          lineStyle: {
+            width: 3,
+            color: '#999'
+          }
+        },
+        axisLabel: {
+          distance: -5,
+          color: '#999',
+          fontSize: 10
+        },
+        anchor: {
+          show: false
+        },
+        title: {
+          show: false
+        },
+        detail: {
+          valueAnimation: true,
+          width: '60%',
+          lineHeight: 40,
+          borderRadius: 8,
+          offsetCenter: [0, '-15%'],
+          fontSize: 20,
+          fontWeight: 'bolder',
+          formatter: '{value} °C',
+          color: 'auto'
+        },
+        data: [
+          {
+            value: 0
+          }
+        ]
+      },
+      {
+        type: 'gauge',
+        center: ['50%', '60%'],
+        startAngle: 200,
+        endAngle: -20,
+        min: 0,
+        max: 60,
+        itemStyle: {
+          color: '#FD7347'
+        },
+        progress: {
+          show: true,
+          width: 8
+        },
+        pointer: {
+          show: false
+        },
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        splitLine: {
+          show: false
+        },
+        axisLabel: {
+          show: false
+        },
+        detail: {
+          show: false
+        },
+        data: [
+          {
+            value: 0
+          }
+        ]
+      }
+    ]
+  };
+
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
+
+  function setTemperature(tempValue) {
+    myChart.setOption({
+      series: [
+        {
+          data: [
+            {
+              value: tempValue
+            }
+          ]
+        },
+        {
+          data: [
+            {
+              value: tempValue
+            }
+          ]
+        }
+      ]
+    })
+  }
+
+  window.addEventListener('resize', myChart.resize);
+</script>
+</body>
+</html>
